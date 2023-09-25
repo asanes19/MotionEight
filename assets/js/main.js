@@ -105,17 +105,35 @@ animateElements.forEach((element) => {
 srAuto.reveal(".animate-element", { interval: 500 });
 
 
-// Initialize Swiper
-var swiper = new Swiper('.servicesSlider', {
-    slidesPerView: 1, // Number of slides to show at a time
-    spaceBetween: 30, // Space between slides
-    loop: true, // Enable looping
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-    },
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
+document.addEventListener("DOMContentLoaded", function () {
+    const apartmentSections = document.querySelectorAll(".servicesSection");
+
+    apartmentSections.forEach(function (apartmentSection, index) {
+        let currentSlide = 0;
+        const images = apartmentSection.querySelector(".image-slider").querySelectorAll("img");
+        const totalSlides = images.length;
+
+        function showSlide(slideIndex) {
+            images.forEach((image, idx) => {
+                if (idx === slideIndex) {
+                    image.style.opacity = 1;
+                } else {
+                    image.style.opacity = 0;
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        function autoSlide() {
+            nextSlide();
+            setTimeout(autoSlide, 3000); // Change slide every 5 seconds
+        }
+
+        showSlide(currentSlide);
+        autoSlide();
+    });
 });
