@@ -166,7 +166,6 @@ img {
 .nav {
     height: var(--header-height);
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 .nav__logo,
@@ -176,7 +175,6 @@ img {
 }
 .nav__logo {
     align-items: center;
-    column-gap: 0.5rem;
     font-weight: var(--font-medium);
     transition: 0.3s;
 }
@@ -224,7 +222,6 @@ img {
     padding-top: 9rem;
 }
 .nav__link {
-    font-size: 17px;
     color: white;
     transition: 0.3s;
     font-weight: bolder;
@@ -414,8 +411,6 @@ img {
     position: relative;
 }
 
-
-
 .socialIcons {
     display: flex;
     flex-direction: column;
@@ -427,9 +422,7 @@ img {
     border-left: 1px solid #bd9354;
     content: "";
     display: block;
-    height: 267px;
     position: absolute;
-    top: 98px;
     width: 1px;
     z-index: 0;
 }
@@ -437,9 +430,7 @@ img {
     border-left: 1px solid #bd9354;
     content: "";
     display: block;
-    height: 267px;
     position: absolute;
-    bottom: 98px;
     width: 1px;
     z-index: 0;
 }
@@ -449,6 +440,8 @@ img {
     color: var(--first-color);
     text-decoration: none;
     transition: transform 0.2s ease, color 0.2s ease;
+    z-index: 1;
+    background-color: #000;
 }
 
 .socialIcons i {
@@ -473,8 +466,8 @@ img {
     display: block;
     height: 2px;
     position: absolute;
-    width: 97px;
-    right: 16px;
+    width: 65px;
+    right: 42px;
     z-index: 0;
     background-color: #bd9354;
 }
@@ -483,8 +476,8 @@ img {
     display: block;
     height: 2px;
     position: absolute;
-    width: 97px;
-    left: 16px;
+    width: 65px;
+    left: 42px;
     z-index: 0;
     background-color: #bd9354;
 }
@@ -589,12 +582,11 @@ img {
     padding-left: 6px;
 }
 
-.servicesMainTitle{
+.servicesMainTitle {
     color: #f0f0f0;
     text-align: left;
     line-height: 0.5em;
     letter-spacing: -1px;
-
 }
 .scroll-down {
     position: absolute;
@@ -667,14 +659,14 @@ img {
     background-color: var(--first-color);
     margin: 0 auto; /* Center the border horizontally */
     margin-top: 10px; /* Adjust the distance between text and border as needed */
-  }
+}
 
-  .servicesSection {
+.servicesSection {
     height: 120vh;
     background-color: #000000;
     border-top: 10px solid var(--first-color);
     margin-top: 100px;
-    padding: 3rem 0 ;
+    padding: 3rem 0;
 }
 
 .image-slider-container {
@@ -710,23 +702,21 @@ img {
     top: 0;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 1; 
+    z-index: 1;
     font-size: 28px;
-    text-align: center; 
+    text-align: center;
     color: var(--first-color);
-
 }
 .services-title::after {
     content: "";
     display: block;
-    width: 140px; 
-    height: 2px; 
+    width: 140px;
+    height: 2px;
     background-color: var(--first-color);
-    margin: 0 auto; 
+    margin: 0 auto;
     margin-top: 10px;
-  }
-  .slider-content {
-
+}
+.slider-content {
     position: absolute;
     top: 50%;
     left: 75px;
@@ -736,18 +726,18 @@ img {
     color: white;
     text-align: center;
 }
-  .slider-content p {
+.slider-content p {
     text-align: justify;
     margin: 30px 0;
     color: #cbc8c2;
     font-size: 14px;
 }
 
-.slider-content h2{
+.slider-content h2 {
     color: var(--first-color);
-    text-align:start;
+    text-align: start;
 }
-.slider-button{
+.slider-button {
     display: flex;
     align-items: start;
     padding: 10px 20px;
@@ -778,21 +768,41 @@ img {
     opacity: 1;
 }
 
-.ri-menu-line{
+.ri-menu-line {
     color: var(--first-color);
 }
 
 /*=============== BREAKPOINTS ===============*/
 @media only screen and (max-width: 992px) {
+    
+    .socialIcons:before {
+        height: 240px;
+        top: 176px;
+    }
+    .socialIcons:after {
+        height: 240px;
+        bottom: 176px;
+    }
+    .bannerTitle span {
+        font-size: 63px;
+    }
+    .nav__link {
+        font-size: 11px;
+    }
+    .nav__logo {
+        column-gap: 0.2rem;
+    }
+    .nav{
+        justify-content: center;
+    }
 }
 
 /* For small devices */
 @media screen and (max-width: 450px) {
-    .servicesMainTitle{
+    .servicesMainTitle {
         font-size: 15px;
-    
     }
-    .bannerList{
+    .bannerList {
         left: 10px;
     }
     .theList li {
@@ -805,7 +815,7 @@ img {
     .myShadow {
         background: linear-gradient(90deg, rgba(0, 0, 0, 1) 25%, rgba(0, 0, 0, 0.8) 75%, rgba(252, 176, 69, 0) 100%);
     }
-    
+
     .bannerParagraph,
     .bannerList {
         width: 90%;
@@ -817,10 +827,10 @@ img {
         margin: 20px 10px;
     }
     .bannerContent {
-height: 95vh;
-justify-content: center;
-    display: flex;
-    flex-direction: column;
+        height: 95vh;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
     }
     .bannerContainer {
         width: 100%;
@@ -830,7 +840,35 @@ justify-content: center;
 /* For medium devices */
 @media screen and (min-width: 767px) {
 
-    .socialIconsMobile{
+    .servicesMainTitle {
+        font-size: 21px;
+    }
+    .bannerParagraph p {
+        font-size: 14px;
+    }
+    .theList li {
+        margin: 10px;
+    }
+    .bannerParagraph, .bannerList {
+        width: 70%;
+        padding: 10px;
+        left: 40px;
+    }
+    .bannerContent div {
+        margin: 30px;
+    }
+    .bannerContainer {
+        width: 95%;
+    }
+    .mainBanner {
+        padding: 20px 10px;
+    }
+    .container {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .socialIconsMobile {
         display: none;
     }
 
@@ -840,7 +878,7 @@ justify-content: center;
     }
     .nav__list {
         flex-direction: row;
-        column-gap: 3rem;
+        column-gap: 2rem;
         padding-top: 0;
     }
     .nav__link {
@@ -851,9 +889,26 @@ justify-content: center;
 /* For large devices */
 
 @media screen and (min-width: 1040px) {
-    .servicesMainTitle{
+
+    .socialIcons:before {
+        height: 267px;
+        top: 98px;
+    }
+    .socialIcons:after {
+        height: 267px;
+        bottom: 98px;
+    }
+    .nav__link {
+        font-size: 17px;
+    }
+    .nav__logo {
+        column-gap: 0.5rem;
+    }
+    .nav {
+        justify-content: space-between;
+    }
+    .servicesMainTitle {
         font-size: 21px;
-    
     }
     .bannerParagraph p {
         font-size: 14px;
@@ -862,11 +917,11 @@ justify-content: center;
         margin: 10px;
     }
     .bannerParagraph,
-.bannerList {
-    width: 50%;
-    padding: 10px;
-    left: 40px;
-}
+    .bannerList {
+        width: 50%;
+        padding: 10px;
+        left: 40px;
+    }
     .bannerTitle span {
         font-size: 120px;
     }
@@ -876,7 +931,7 @@ justify-content: center;
     .bannerContainer {
         width: 95%;
     }
-    .mainBanner{
+    .mainBanner {
         padding: 20px 10px;
     }
     .container {
@@ -885,13 +940,37 @@ justify-content: center;
     }
 }
 
-@media only screen and (max-width: 768px) {
-    .socialIcons{
+@media only screen and (max-width: 767px) {
+    .socialIcons {
         display: none;
     }
 }
 
 @media only screen and (max-width: 580px) {
+
+    .bannerList {
+        left: 10px;
+    }
+    .servicesMainTitle {
+        font-size: 15px;
+    }
+    .theList li {
+        margin: 5px;
+        font-size: 14px;
+    }
+    .bannerParagraph,
+    .bannerList {
+        width: 85%;
+    }
+    .bannerContent div {
+        margin: 20px 10px;
+    }
+    .bannerTitle span {
+        font-size: 40px;
+    }
+    .bannerParagraph p {
+        font-size: 14px;
+    }
 }
 
 @media (min-width: 1200px) {
@@ -905,4 +984,13 @@ justify-content: center;
 }
 
 @media (min-width: 992px) {
+}
+
+@media screen and (min-width: 520px) and (max-width: 580px) {
+    .socialIconsMobile:after {
+        width: 133px;
+    }
+    .socialIconsMobile:before {
+        width: 133px;
+    }
 }
