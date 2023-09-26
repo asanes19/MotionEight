@@ -460,6 +460,51 @@ img {
     color: #f5ca89;
 }
 
+.socialIconsMobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    margin: 40px 10px 10px !important;
+}
+
+.socialIconsMobile:before {
+    content: "";
+    display: block;
+    height: 2px;
+    position: absolute;
+    width: 97px;
+    right: 16px;
+    z-index: 0;
+    background-color: #bd9354;
+}
+.socialIconsMobile:after {
+    content: "";
+    display: block;
+    height: 2px;
+    position: absolute;
+    width: 97px;
+    left: 16px;
+    z-index: 0;
+    background-color: #bd9354;
+}
+
+.socialIconsMobile a {
+    margin: 10px;
+    color: var(--first-color);
+    text-decoration: none;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.socialIconsMobile i {
+    font-size: 20px;
+}
+
+.socialIconsMobile a:hover i {
+    transform: scale(1.4);
+    color: #f5ca89;
+}
+
 .bannerTitle span {
     text-align: left;
     line-height: 0.5em;
@@ -546,7 +591,6 @@ img {
 
 .servicesMainTitle{
     color: #f0f0f0;
-    font-size: 15px;
     text-align: left;
     line-height: 0.5em;
     letter-spacing: -1px;
@@ -744,6 +788,10 @@ img {
 
 /* For small devices */
 @media screen and (max-width: 450px) {
+    .servicesMainTitle{
+        font-size: 15px;
+    
+    }
     .bannerList{
         left: 10px;
     }
@@ -766,7 +814,7 @@ img {
         font-size: 28px;
     }
     .bannerContent div {
-        margin: 10px;
+        margin: 20px 10px;
     }
     .bannerContent {
 height: 95vh;
@@ -781,6 +829,10 @@ justify-content: center;
 
 /* For medium devices */
 @media screen and (min-width: 767px) {
+
+    .socialIconsMobile{
+        display: none;
+    }
 
     .nav__toggle,
     .nav__close {
@@ -799,6 +851,10 @@ justify-content: center;
 /* For large devices */
 
 @media screen and (min-width: 1040px) {
+    .servicesMainTitle{
+        font-size: 21px;
+    
+    }
     .bannerParagraph p {
         font-size: 14px;
     }
