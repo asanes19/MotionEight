@@ -743,7 +743,7 @@ img {
 }
 
 /* For small devices */
-@media screen and (max-width: 395px) {
+@media screen and (max-width: 450px) {
     .bannerList{
         left: 10px;
     }
