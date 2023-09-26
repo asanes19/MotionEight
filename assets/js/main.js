@@ -52,7 +52,7 @@ window.addEventListener('scroll', scrollUp)
 
 // type writer effect
 var typed = new Typed(".second-span", {
-    strings: ["Brands.", "Stories.", "Experiences."],
+    strings: ["Brands.", "Stories.", "Memories."],
     typeSpeed: 150,
     backSpeed: 150,
     loop: true
@@ -67,18 +67,25 @@ const sr = ScrollReveal({
     duration: 800, // Animation duration (in milliseconds)
     delay: 200, // Delay before animation starts (in milliseconds)
     reset: false, // Resets the animation on exit
-  });
-  
-  // Define the elements you want to animate
-  const titleElement = document.querySelector('.bannerTitle');
-  const paragraphElement = document.querySelector('.bannerParagraph');
-  const listElement = document.querySelector('.bannerList');
-  
-  // Add the animations to the elements
-  sr.reveal(titleElement);
-  sr.reveal(paragraphElement, { delay: 400 }); // Delay the paragraph animation
-  sr.reveal(listElement, { delay: 600 }); // Delay the list animation
-  
+});
+
+// Define the elements you want to animate for the banner
+const titleElement = document.querySelector('.bannerTitle');
+const paragraphElement = document.querySelector('.bannerParagraph');
+const listElement = document.querySelector('.bannerList');
+
+// Define the elements you want to animate for the slider-content
+const sliderContents = document.querySelectorAll('.slider-content');
+
+// Add the animations to the elements for the banner
+sr.reveal(titleElement);
+sr.reveal(paragraphElement, { delay: 400 }); // Delay the paragraph animation
+sr.reveal(listElement, { delay: 600 }); // Delay the list animation
+
+// Add the animations to the elements for the slider-content
+sliderContents.forEach((content, index) => {
+    sr.reveal(content, { delay: 400 + index * 200 }); // Add delay for staggered animation
+});
 
   /*=============== scroll reveal fade in ===============*/
 const srAuto = ScrollReveal({
@@ -111,17 +118,30 @@ document.addEventListener("DOMContentLoaded", function () {
     apartmentSections.forEach(function (apartmentSection, index) {
         let currentSlide = 0;
         const images = apartmentSection.querySelector(".image-slider").querySelectorAll("img");
+        const titles = apartmentSection.querySelectorAll(".slider-title");
+        const descriptions = apartmentSection.querySelectorAll(".slider-content p");
+        const buttons = apartmentSection.querySelectorAll(".slider-button");
         const totalSlides = images.length;
 
         function showSlide(slideIndex) {
             images.forEach((image, idx) => {
                 if (idx === slideIndex) {
                     image.style.opacity = 1;
+                    titles[idx].style.opacity = 1;
+                    descriptions[idx].style.opacity = 1;
+                    buttons[idx].style.opacity = 1;
+                    sliderContents[idx].classList.add("active"); // Add the "active" class to the content div
                 } else {
                     image.style.opacity = 0;
+                    titles[idx].style.opacity = 0;
+                    descriptions[idx].style.opacity = 0;
+                    buttons[idx].style.opacity = 0;
+                    sliderContents[idx].classList.remove("active"); // Remove the "active" class
                 }
             });
         }
+        
+        
 
         function nextSlide() {
             currentSlide = (currentSlide + 1) % totalSlides;

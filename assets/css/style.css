@@ -110,7 +110,6 @@ h3 {
 
 ul {
     list-style: none;
-    margin-top: 1rem;
 }
 
 a {
@@ -191,8 +190,9 @@ img {
 }
 
 .nav__toggle {
-    position: relative;
+    position: fixed;
     z-index: 10;
+    right: 15px;
 }
 
 .nav__logo:hover {
@@ -387,7 +387,6 @@ img {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    padding: 20px 10px;
     display: flex;
     justify-content: center;
 }
@@ -403,7 +402,6 @@ img {
 }
 
 .bannerContainer {
-    width: 95%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -411,15 +409,12 @@ img {
 }
 .bannerContent {
     width: 100%;
-    padding: 20px;
     z-index: 3;
     margin: 30px 0;
     position: relative;
 }
 
-.bannerContent div {
-    margin: 30px;
-}
+
 
 .socialIcons {
     display: flex;
@@ -451,17 +446,22 @@ img {
 
 .socialIcons a {
     margin: 10px;
-    color: #bd9354;
+    color: var(--first-color);
     text-decoration: none;
+    transition: transform 0.2s ease, color 0.2s ease;
 }
 
 .socialIcons i {
     font-size: 20px;
 }
 
+.socialIcons a:hover i {
+    transform: scale(1.4);
+    color: #f5ca89;
+}
+
 .bannerTitle span {
     text-align: left;
-    font-size: 120px;
     line-height: 0.5em;
     letter-spacing: -1px;
 }
@@ -482,7 +482,7 @@ img {
 
 .bannerTitle {
     /* margin: 30px; */
-    padding: 10px;
+    /* padding: 10px; */
 }
 
 /* Define keyframes for fading in and sliding */
@@ -511,10 +511,6 @@ img {
 
 .bannerParagraph,
 .bannerList {
-    width: 50%;
-    margin: 0 30px;
-    padding: 10px;
-    left: 40px;
     position: relative;
 }
 /* .bannerParagraph :before {
@@ -529,9 +525,8 @@ img {
 } */
 
 .bannerParagraph p {
-    color: #d6d0c4;
+    color: #cbc8c2;
     text-align: justify;
-    font-size: 14px;
     margin-bottom: 0;
 }
 .bannerParagraph {
@@ -541,12 +536,21 @@ img {
 
 .theList {
     display: flex;
+    flex-wrap: wrap;
 }
 .theList li {
-    color: #d6d0c4;
-    margin: 10px;
+    color: #cbc8c2;
     border-left: 2px solid var(--first-color);
     padding-left: 6px;
+}
+
+.servicesMainTitle{
+    color: #f0f0f0;
+    font-size: 15px;
+    text-align: left;
+    line-height: 0.5em;
+    letter-spacing: -1px;
+
 }
 .scroll-down {
     position: absolute;
@@ -657,7 +661,7 @@ img {
     opacity: 1;
 }
 
-.slider-title {
+.services-title {
     position: absolute;
     top: 0;
     left: 50%;
@@ -668,16 +672,17 @@ img {
     color: var(--first-color);
 
 }
-.slider-title::after {
+.services-title::after {
     content: "";
     display: block;
-    width: 140px; /* Adjust the width of the border as needed */
-    height: 2px; /* Adjust the height of the border as needed */
+    width: 140px; 
+    height: 2px; 
     background-color: var(--first-color);
-    margin: 0 auto; /* Center the border horizontally */
-    margin-top: 10px; /* Adjust the distance between text and border as needed */
+    margin: 0 auto; 
+    margin-top: 10px;
   }
-  .sliderContent {
+  .slider-content {
+
     position: absolute;
     top: 50%;
     left: 75px;
@@ -687,18 +692,18 @@ img {
     color: white;
     text-align: center;
 }
-  .sliderContent p {
+  .slider-content p {
     text-align: justify;
     margin: 30px 0;
-    color: #d6d0c4;
+    color: #cbc8c2;
     font-size: 14px;
 }
 
-.sliderContent h2{
+.slider-content h2{
     color: var(--first-color);
     text-align:start;
 }
-.sliderButton{
+.slider-button{
     display: flex;
     align-items: start;
     padding: 10px 20px;
@@ -711,26 +716,72 @@ img {
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.sliderButton:hover {
+.slider-button:hover {
     background-color: #000000; /* Change to your desired hover color */
     transform: scale(1.05); /* Add a slight scale effect on hover */
     border: 2px solid var(--first-color);
 }
 
-.sliderButton:focus {
+.slider-button:focus {
     outline: none;
     box-shadow: 0 0 5px rgba(255, 153, 0, 0.5); /* Add a subtle box-shadow when focused */
 }
+.slider-content {
+    transition: opacity 0.5s ease;
+}
+
+.slider-content.active {
+    opacity: 1;
+}
+
+.ri-menu-line{
+    color: var(--first-color);
+}
+
 /*=============== BREAKPOINTS ===============*/
 @media only screen and (max-width: 992px) {
 }
 
 /* For small devices */
 @media screen and (max-width: 395px) {
+    .bannerList{
+        left: 10px;
+    }
+    .theList li {
+        margin: 5px;
+        font-size: 11px;
+    }
+    .bannerParagraph p {
+        font-size: 10px;
+    }
+    .myShadow {
+        background: linear-gradient(90deg, rgba(0, 0, 0, 1) 25%, rgba(0, 0, 0, 0.8) 75%, rgba(252, 176, 69, 0) 100%);
+    }
+    
+    .bannerParagraph,
+    .bannerList {
+        width: 90%;
+    }
+    .bannerTitle span {
+        font-size: 28px;
+    }
+    .bannerContent div {
+        margin: 10px;
+    }
+    .bannerContent {
+height: 95vh;
+justify-content: center;
+    display: flex;
+    flex-direction: column;
+    }
+    .bannerContainer {
+        width: 100%;
+    }
 }
 
 /* For medium devices */
 @media screen and (min-width: 767px) {
+
     .nav__toggle,
     .nav__close {
         display: none;
@@ -748,6 +799,30 @@ img {
 /* For large devices */
 
 @media screen and (min-width: 1040px) {
+    .bannerParagraph p {
+        font-size: 14px;
+    }
+    .theList li {
+        margin: 10px;
+    }
+    .bannerParagraph,
+.bannerList {
+    width: 50%;
+    padding: 10px;
+    left: 40px;
+}
+    .bannerTitle span {
+        font-size: 120px;
+    }
+    .bannerContent div {
+        margin: 30px;
+    }
+    .bannerContainer {
+        width: 95%;
+    }
+    .mainBanner{
+        padding: 20px 10px;
+    }
     .container {
         margin-left: auto;
         margin-right: auto;
@@ -755,6 +830,9 @@ img {
 }
 
 @media only screen and (max-width: 768px) {
+    .socialIcons{
+        display: none;
+    }
 }
 
 @media only screen and (max-width: 580px) {
