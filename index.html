@@ -5,7 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="keywords" content="Digital agency, web design, web development, branding, motion graphics, video advertising, social media ads" />
         <meta name="title" content="Digital Agency Services | Bait Albahar" />
-        <meta name="description" content="Motion Eight is a leading digital agency dedicated to providing top-notch web design, development, and branding services. Our expertise also extends to motion graphics, video advertising, and social media ads. Join us on our journey to transform businesses with innovative strategies and cutting-edge technologies." />
+        <meta
+            name="description"
+            content="Motion Eight is a leading digital agency dedicated to providing top-notch web design, development, and branding services. Our expertise also extends to motion graphics, video advertising, and social media ads. Join us on our journey to transform businesses with innovative strategies and cutting-edge technologies."
+        />
         <!--=============== FAVICON ===============-->
         <link rel="icon" href="assets/img/LightMotion8Png.png" type="image/x-icon" />
 
@@ -71,14 +74,16 @@
         <!--************* MAIN CODE ****************-->
 
         <main class="main">
-            <section class="mainBanner">
+            <section class="mainBanner" id="mainBanner">
                 <div class="myShadow"></div>
                 <div class="bannerContainer">
                     <div class="socialIcons">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="mailto:your@email.com"><i class="far fa-envelope"></i></a>
-                        <a href="tel:+123456789"><i class="fas fa-phone"></i></a>
+                        <span>
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="mailto:your@email.com"><i class="far fa-envelope"></i></a>
+                            <a href="tel:+123456789"><i class="fas fa-phone"></i></a>
+                        </span>
                     </div>
                     <div class="bannerContent">
                         <div class="bannerTitle">
@@ -116,7 +121,6 @@
                 </div>
             </section>
 
-
             <!--about us-->
             <section class="section" id="aboutUs">
                 <h2 class="aboutUsTitle">About Us - Motion Eight</h2>
@@ -136,43 +140,158 @@
                 </div>
             </section>
 
-
             <!--slider-->
             <section class="servicesSection">
-                <div class="image-slider-container">
-                    <div class="image-slider" id="slider2">
-                        <div class="slider-item">
-                            <img src="assets/img/banner1.jpg" alt="Image 1" />
-                            <div class="slider-content">
-                                <h2 class="slider-title">Web Development</h2>
+                <h2 class="services-title">Our Services</h2>
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="assets/img/webBanner.png" alt="Image 1" />
+                            <div class="slide-content">
+                                <h2>Web Design & Development</h2>
                                 <p>
-                                    At our agency, we are driven by a shared vision. As two young Developers, we've harnessed our experience and knowledge to embark on a journey to revolutionize the market. Our mission is simple yet profound: to
-                                    leverage the latest technologies and innovative strategies to transform businesses. With a dynamic approach and a commitment to excellence, we're dedicated to helping our clients reach new heights in the digital
-                                    landscape. Join us on this exciting adventure as we navigate the ever-evolving world of marketing, social media, and web development, crafting success stories along the way.
+                                    Our Web Design & Development services bring your digital vision to life. We specialize in creating stunning, user-friendly websites and web applications that not only look great but also function
+                                    seamlessly. From responsive designs to robust back-end development, our team combines creativity and technical expertise to deliver websites that engage users and drive results. Whether you need a
+                                    brand-new site or want to revamp your existing online presence, we're here to make your web dreams a reality.
                                 </p>
                                 <button class="slider-button">Our Work</button>
                             </div>
                         </div>
-                        <div class="slider-item">
-                            <img src="assets/img/banner2.jpg" alt="Image 2" />
-                            <div class="slider-content">
-                                <h2 class="slider-title">Graphic Design</h2>
+                        <div class="swiper-slide">
+                            <img src="assets/img/vidadsBanner.png" alt="Image 1" />
+                            <div class="slide-content">
+                                <h2>Video Advertising</h2>
                                 <p>
-                                    Another description for the second image goes here. You can customize the text and content as needed.
+                                    Our Video Advertising services harness the power of visual storytelling to captivate your audience. With strategic planning and creative execution, we produce compelling video content that grabs attention
+                                    and delivers your message effectively. Whether it's promotional videos, explainer animations, or social media ads, we craft videos that engage, inform, and drive conversions. Elevate your brand's presence
+                                    and reach your target audience with our Video Advertising expertise.
                                 </p>
-                                <button class="slider-button">Learn More</button>
+                                <button class="slider-button">Our Work</button>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <video src="assets/img/motionVid.mp4" autoplay muted loop playsinline alt="Image 1" class="swiper-slide-video"></video>
+                            <div class="slide-content">
+                                <h2>Motion Videos</h2>
+                                <p>
+                                    Our Motion Videos showcase our creativity and expertise in visual storytelling. With captivating animations and compelling narratives, we bring your ideas to life through motion graphics. Whether you need
+                                    explainer videos, animated ads, or eye-catching presentations, our Motion Videos will leave a lasting impression on your audience.
+                                </p>
+                                <button class="slider-button">Our Work</button>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img src="assets/img/brandingBanner.png" alt="Image 1" />
+                            <div class="slide-content">
+                                <h2>Branding</h2>
+                                <p>
+                                    Unlock the full potential of your brand with our comprehensive Branding service. We go beyond just creating logos and visuals; we craft a unique identity that resonates with your target audience. Our
+                                    experts work closely with you to define your brand's voice, personality, and values. From logo design to brand guidelines, we ensure consistency across all touchpoints. Let us help you build a memorable
+                                    and impactful brand that stands out in today's competitive market.
+                                </p>
+                                <button class="slider-button">Our Work</button>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="assets/img/socialMediaAds.png" alt="Image 1" />
+                            <div class="slide-content">
+                                <h2>Social Media Ads</h2>
+                                <p>
+                                    Unlock the full potential of your brand with our comprehensive Branding service. We go beyond just creating logos and visuals; we craft a unique identity that resonates with your target audience. Our
+                                    experts work closely with you to define your brand's voice, personality, and values. From logo design to brand guidelines, we ensure consistency across all touchpoints. Let us help you build a memorable
+                                    and impactful brand that stands out in today's competitive market.
+                                </p>
+                                <button class="slider-button">Our Work</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-            
+
+            <section class="partnersSection">
+                <h2 class="aboutUsTitle">Our Clients</h2>
+                <div class="PartnerCont">
+                    <div class="partnerTitle">
+                        <span>
+                            Working With the Best Clients and Partners
+                        </span>
+                    </div>
+                    <div class="partnerslogos">
+                        <div class="row">
+                            <img src="assets/img/partners/baitlogo.png" />
+                            <img src="assets/img/partners/XLogo.jpg" />
+                        </div>
+                        <div class="row">
+                            <img src="assets/img/partners/noojomLogo.png" />
+                            <img src="assets/img/partners/AorLogo.png" />
+                        </div>
+                        <div class="row">
+                            <img src="assets/img/partners/manalLogo.png" />
+                            <img src="assets/img/partners/foundersLogo.png" />
+                        </div>
+                    </div>
+
+                    </div>
+            </section>
+
+            <div id="contact">
+                <h2>Get in Touch</h2>
+                <div id="contact-form">
+                    <form method="POST" action="https://formspree.io/f/maygevza">
+                        <input type="hidden" name="_subject" value="Contact request from personal website" />
+                        <input type="name" name="_replyto" placeholder="Your Name" required />
+                        <input type="email" name="_replyto" placeholder="Your email" required />
+                        <input type="phoneNumber" name="_replyto" placeholder="Your Phone Number" required />
+                        <textarea name="message" placeholder="Your message" required></textarea>
+                        <button type="submit">Send</button>
+                    </form>
+                </div>
+                <!-- End #contact-form -->
+            </div>
+            <!-- End #contact -->
+
+            <footer>
+                <div class="container mainCont">
+                    <div class="row">
+                        <div class="col-sm-5 copyright">
+                            <p>Copyright &copy; <span id="current-year">2023</span> Motion Eight Team</p>
+                        </div>
+                        <div class="col-sm-2 top">
+                            <a href="#mainBanner">
+                                <span id="to-top">
+                                    <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="col-sm-5 social">
+                            <ul>
+                                <ul>
+                                    <li>
+                                        <a href="#"><i class="fab fa-facebook"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fab fa-instagram"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="mailto:your@email.com"><i class="far fa-envelope"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="tel:+123456789"><i class="fas fa-phone"></i></a>
+                                    </li>
+                                </ul>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- End footer -->
         </main>
 
-        <!--==================== FOOTER ====================-->
-        <footer class="footer section"></footer>
-
         <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+        <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
         <script src="https://unpkg.com/scrollreveal"></script>
         <!--=============== SCROLL REVEAL - PAGE ANNIMATION ===============-->
