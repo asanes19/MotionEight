@@ -106,31 +106,31 @@ animateElements.forEach((element) => {
     srAuto.reveal(element);
 });
 
-// srAuto.reveal(".animate-element", { interval: 500 });
-// document.addEventListener("DOMContentLoaded", function () {
-//     const mySwiper = new Swiper(".swiper-container", {
-//         // Customize Swiper options here
-//         navigation: {
-//             nextEl: ".swiper-button-next",
-//             prevEl: ".swiper-button-prev",
-//         },
-//         pagination: {
-//             el: ".swiper-pagination",
-//         },
-//         autoplay: {
-//             delay: 5000, // Auto-advance every 5 seconds (5000 milliseconds)
-//         },
-//     });
+srAuto.reveal(".animate-element", { interval: 500 });
+document.addEventListener("DOMContentLoaded", function () {
+    const mySwiper = new Swiper(".swiper-container", {
+        // Customize Swiper options here
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+            el: ".swiper-pagination",
+        },
+        autoplay: {
+            delay: 5000, // Auto-advance every 5 seconds (5000 milliseconds)
+        },
+    });
 
-//     // Find all video elements in the slider
-//     const videoElements = document.querySelectorAll(".swiper-slide-video");
+    // Find all video elements in the slider
+    const videoElements = document.querySelectorAll(".swiper-slide-video");
 
-//     // Loop all videos continuously
-//     videoElements.forEach((video) => {
-//         video.addEventListener("ended", function () {
-//             // Reset video playback to the beginning when it ends
-//             video.currentTime = 0;
-//             video.play();
-//         });
-//     });
-// });
+    // Loop all videos continuously
+    videoElements.forEach((video) => {
+        video.addEventListener("ended", function () {
+            // Reset video playback to the beginning when it ends
+            video.currentTime = 0;
+            video.play();
+        });
+    });
+});

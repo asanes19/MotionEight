@@ -580,7 +580,7 @@ img {
 }
 
 .servicesSection {
-    height: 100vh;
+    background-image: url(../img/partners/bg.png);
     background-color: #000000;
     border-top: 10px solid var(--first-color);
     margin-top: 100px;
@@ -615,14 +615,10 @@ img {
 }
 
 .services-title {
-    position: absolute;
-    /* top: 0; */
-    left: 50%;
-    transform: translate(-50%, 15%);
-    z-index: 2;
     font-size: 28px;
     text-align: center;
     color: var(--first-color);
+    margin: 10px;
 }
 .services-title::after {
     content: "";
@@ -853,6 +849,14 @@ footer {
 
 /* For small devices */
 @media screen and (max-width: 450px) {
+
+    .slide-content h2 {
+        font-size: 7vw;
+        text-align: center !important;
+    }
+    .swiper-slide {
+flex-direction: column-reverse;
+    }
     .partnerslogos {
 display: flex;
 flex-direction: column;
@@ -1006,6 +1010,22 @@ text-align: center;
 /* For large devices */
 
 @media screen and (min-width: 1024px) {
+    .slide-content p {
+        width: 85%;
+    }
+    .slide-content {
+        align-items: flex-start;
+        left: 50px;
+        position: relative;
+    }
+    .slide-content h2 {
+        font-size: 3vw;
+    }
+    
+    .servicesSection {
+        height: 100vh;
+    }
+    
     .partnerslogos .row img {
         margin: 15px;
         width: 245px;
@@ -1154,14 +1174,8 @@ text-align: center;
 
 /* Style individual slides */
 .swiper-slide {
-    /* display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center; */
     width: 100%;
     display: flex;
-    background-image: url(../img/partners/bg.png);
     align-items: center;
 }
 
@@ -1172,7 +1186,7 @@ text-align: center;
     align-items: center;
     justify-content: center;
 }
-.sliderImg img{
+.sliderImg img, video{
 width: 80%;
 }
 
@@ -1183,7 +1197,6 @@ width: 80%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     padding: 25px;
 }
 /* Style the description text */
@@ -1196,10 +1209,10 @@ width: 80%;
 }
 .slide-content h2 {
     font-weight: bold;
-    font-size: 3vw;
     text-align: left;
     letter-spacing: -1px;
     color: #ffffff;
+    margin: 0;
 }
 
 .slider-button {
