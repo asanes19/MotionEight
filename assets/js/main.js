@@ -105,29 +105,41 @@ function animateSliderContent() {
     sr.reveal(".animate-element", { interval: 500 });
 }
 
+let isSwiperInitialized = false;
+
 // Function to initialize Swiper for the slider
 function initializeSwiper() {
-    const mySwiper = new Swiper(".swiper-container", {
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-        pagination: {
-            el: ".swiper-pagination",
-        },
-        autoplay: {
-            delay: 5000,
-        },
-    });
-
-    const videoElements = document.querySelectorAll(".swiper-slide-video");
-    videoElements.forEach((video) => {
-        video.addEventListener("ended", function () {
-            video.currentTime = 0;
-            video.play();
+    if (!isSwiperInitialized) {
+        const mySwiper = new Swiper(".swiper-container", {
+            autoplay: {
+                delay: 5000,
+            },
+            speed: 1000, // Adjust slide transition speed (in milliseconds)
+            slidesPerView: 1, // Number of slides visible at once
+            loop: true, // Enable loop mode for continuous sliding
         });
-    });
+        const videoElements = document.querySelectorAll(".swiper-slide-video");
+        videoElements.forEach((video) => {
+            video.addEventListener("ended", function () {
+                video.currentTime = 0;
+                video.play();
+            });
+        });
+        isSwiperInitialized = true;
+    }
 }
+// Use Intersection Observer to detect when the "services" section is visible
+const servicesSection = document.getElementById("services");
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            initializeSwiper(); // Initialize Swiper when section is visible
+            observer.unobserve(servicesSection); // Stop observing once Swiper is initialized
+        }
+    });
+});
+// Start observing the "services" section
+observer.observe(servicesSection);
 
 // Function to add animations for contact form
 function animateContactForm() {
