@@ -57,59 +57,57 @@ var typed = new Typed(".second-span", {
 
 //fade in banner animation
 
-// Initialize ScrollReveal
-const sr = ScrollReveal({
-    origin: "left", // Animation from the left
-    distance: "20px", // Distance to slide
-    duration: 800, // Animation duration (in milliseconds)
-    delay: 200, // Delay before animation starts (in milliseconds)
-    reset: false, // Resets the animation on exit
-});
-
-// Define the elements you want to animate for the banner
-const titleElement = document.querySelector(".bannerTitle");
-const paragraphElement = document.querySelector(".bannerParagraph");
-const listElement = document.querySelector(".bannerList");
-
-// Define the elements you want to animate for the slider-content
-const sliderContents = document.querySelectorAll(".slider-content");
-
-// Add the animations to the elements for the banner
-sr.reveal(titleElement);
-sr.reveal(paragraphElement, { delay: 400 }); // Delay the paragraph animation
-sr.reveal(listElement, { delay: 600 }); // Delay the list animation
-
-// Add the animations to the elements for the slider-content
-sliderContents.forEach((content, index) => {
-    sr.reveal(content, { delay: 400 + index * 200 }); // Add delay for staggered animation
-});
-
-/*=============== scroll reveal fade in ===============*/
-const srAuto = ScrollReveal({
-    origin: "left",
-    distance: "70px",
-    duration: 1000,
-    delay: 400,
-    // reset: true,
-});
-
-function fadeOutSlideContent() {
-    const slideContent = document.querySelector(".slide-content");
-    slideContent.classList.add("fade-out");
+// Function to initialize ScrollReveal
+function initializeScrollReveal(options) {
+    return ScrollReveal(options);
 }
 
-// Call the fadeOutSlideContent function after 10 seconds (10000 milliseconds)
-setTimeout(fadeOutSlideContent, 6000);
+// Function to add animations for banner elements
+function animateBannerElements() {
+    const sr = initializeScrollReveal({
+        origin: "left",
+        distance: "20px",
+        duration: 800,
+        delay: 200,
+        reset: false,
+    });
 
-const animateElements = document.querySelectorAll(".animate-element");
-animateElements.forEach((element) => {
-    srAuto.reveal(element);
-});
+    const titleElement = document.querySelector(".bannerTitle");
+    const paragraphElement = document.querySelector(".bannerParagraph");
+    const listElement = document.querySelector(".bannerList");
 
-srAuto.reveal(".animate-element", { interval: 500 });
-document.addEventListener("DOMContentLoaded", function () {
+    sr.reveal(titleElement);
+    sr.reveal(paragraphElement, { delay: 400 });
+    sr.reveal(listElement, { delay: 600 });
+}
+
+// Function to add animations for slider content
+function animateSliderContent() {
+    const sr = initializeScrollReveal({
+        origin: "left",
+        distance: "70px",
+        duration: 1000,
+        delay: 400,
+    });
+
+    function fadeOutSlideContent() {
+        const slideContent = document.querySelector(".slide-content");
+        slideContent.classList.add("fade-out");
+    }
+
+    setTimeout(fadeOutSlideContent, 6000);
+
+    const animateElements = document.querySelectorAll(".animate-element");
+    animateElements.forEach((element) => {
+        sr.reveal(element);
+    });
+
+    sr.reveal(".animate-element", { interval: 500 });
+}
+
+// Function to initialize Swiper for the slider
+function initializeSwiper() {
     const mySwiper = new Swiper(".swiper-container", {
-        // Customize Swiper options here
         navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
@@ -118,43 +116,47 @@ document.addEventListener("DOMContentLoaded", function () {
             el: ".swiper-pagination",
         },
         autoplay: {
-            delay: 5000, // Auto-advance every 5 seconds (5000 milliseconds)
+            delay: 5000,
         },
     });
 
-    // Find all video elements in the slider
     const videoElements = document.querySelectorAll(".swiper-slide-video");
-
-    // Loop all videos continuously
     videoElements.forEach((video) => {
         video.addEventListener("ended", function () {
-            // Reset video playback to the beginning when it ends
             video.currentTime = 0;
             video.play();
         });
     });
-});
+}
 
-    // fade in for the contact form
-document.addEventListener("DOMContentLoaded", function () {
-    const srDown = ScrollReveal({
-        duration: 3000, // Animation duration in milliseconds
-        distance: "20px", // Distance to slide
-        origin: "bottom", // Animation origin (from the bottom)
+// Function to add animations for contact form
+function animateContactForm() {
+    const sr = initializeScrollReveal({
+        duration: 3000,
+        distance: "20px",
+        origin: "bottom",
     });
 
-    // Add the animation to the contact form element
-    srDown.reveal(".animate-element-from-down", { delay: 200 }); // Delay the animation by 200 milliseconds
-});
+    sr.reveal(".animate-element-from-down", { delay: 200 });
+}
 
-document.addEventListener("DOMContentLoaded", function () {
-    const srPics = ScrollReveal({
-        duration: 1000, // Animation duration in milliseconds
-        origin: "right", // Animation origin (from the right)
-        distance: "20px", // Distance to slide
-        delay: 200, // Delay between each element's animation
+// Function to add animations for partner logos
+function animatePartnerLogos() {
+    const sr = initializeScrollReveal({
+        duration: 1000,
+        origin: "right",
+        distance: "20px",
+        delay: 200,
     });
 
-    // Add the animation to partner logos one by one
-    srPics.reveal(".partner-logo", { interval: 200 }); // Interval between each logo's animation
+    sr.reveal(".partner-logo", { interval: 200 });
+}
+
+// Add event listeners to trigger animations on DOMContentLoaded
+document.addEventListener("DOMContentLoaded", () => {
+    animateBannerElements();
+    animateSliderContent();
+    initializeSwiper();
+    animateContactForm();
+    animatePartnerLogos();
 });
