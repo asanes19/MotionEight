@@ -134,3 +134,27 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+    // fade in for the contact form
+document.addEventListener("DOMContentLoaded", function () {
+    const srDown = ScrollReveal({
+        duration: 3000, // Animation duration in milliseconds
+        distance: "20px", // Distance to slide
+        origin: "bottom", // Animation origin (from the bottom)
+    });
+
+    // Add the animation to the contact form element
+    srDown.reveal(".animate-element-from-down", { delay: 200 }); // Delay the animation by 200 milliseconds
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const srPics = ScrollReveal({
+        duration: 1000, // Animation duration in milliseconds
+        origin: "right", // Animation origin (from the right)
+        distance: "20px", // Distance to slide
+        delay: 200, // Delay between each element's animation
+    });
+
+    // Add the animation to partner logos one by one
+    srPics.reveal(".partner-logo", { interval: 200 }); // Interval between each logo's animation
+});

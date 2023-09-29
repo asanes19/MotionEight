@@ -380,10 +380,10 @@ img {
     color: #f5ca89;
 }
 
-.socialIconsMobileContainer{
+.socialIconsMobileContainer {
     width: 100%;
     display: flex;
-   justify-content: center;
+    justify-content: center;
     align-items: center;
     margin: 0 !important;
 }
@@ -395,13 +395,12 @@ img {
     z-index: 3;
     max-width: 50%;
 }
-.sperator{
+.sperator {
     min-height: 2px;
     max-height: 2px;
     background-color: var(--first-color);
     width: 80px;
 }
-
 
 .socialIconsMobile a {
     margin: 10px;
@@ -560,8 +559,6 @@ img {
 
 #aboutUs {
     border-top: 10px solid var(--first-color);
-    /* border-bottom: 2px solid var(--first-color); */
-    /* padding: 50px; */
 }
 
 .aboutUsTitle {
@@ -671,8 +668,6 @@ img {
     flex-direction: column;
 }
 
-
-
 .PartnerCont {
     width: 100%;
     display: flex;
@@ -701,7 +696,6 @@ img {
     object-fit: contain;
     padding: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Customize the box shadow */
-
 }
 
 #contact {
@@ -849,25 +843,31 @@ footer {
 
 /* For small devices */
 @media screen and (max-width: 450px) {
+    .sliderImg img,
+video {
+    width: 80%;
+}
+    .slide-content p {
+        margin: 30px 0;
+    }
 
     .slide-content h2 {
         font-size: 7vw;
         text-align: center !important;
     }
     .swiper-slide {
-flex-direction: column-reverse;
+        flex-direction: column-reverse;
     }
     .partnerslogos {
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
     .partnerslogos .row img {
         width: 157px;
         height: 123px;
         margin: 10px;
-    
     }
     .partnerslogos .row {
         flex-direction: row;
@@ -880,7 +880,7 @@ align-items: center;
     }
     .partnerTitle {
         font-size: 24px;
-text-align: center;
+        text-align: center;
     }
     .PartnerCont {
         width: 100%;
@@ -949,12 +949,44 @@ text-align: center;
 
 /* For medium devices */
 @media screen and (min-width: 767px) {
-    .aboutUsText{
+    .PartnerCont div {
+        width: 50%;
+    }
+    .aboutUsTitle {
+        margin-bottom: 3rem;
+    }
+    .partnerTitle {
+        font-size: 35px;
+        border-right: 2px solid var(--first-color);
+    }
+    .partnersSection {
+        padding: 3rem 0;
+    }
+    .partnerslogos .row img {
+        width: 157px;
+        height: 123px;
+        margin: 10px;
+    }
+
+    .sliderImg img,
+video {
+    width: 45%;
+}
+    .swiper-slide {
+        flex-direction: column-reverse;
+    }
+    .slide-content p {
+        margin: 20px 0;
+    }
+    .slide-content h2 {
+        font-size: 26px;
+    }
+    .aboutUsText {
         width: 55%;
     }
-    .aboutUsImg{
+    .aboutUsImg {
         width: 40%;
-    margin-right: 10px;
+        margin-right: 10px;
     }
 
     .servicesMainTitle {
@@ -989,8 +1021,8 @@ text-align: center;
     .socialIconsMobile {
         display: none;
     }
-    .sperator{
-        display: none;;
+    .sperator {
+        display: none;
     }
 
     .nav__toggle,
@@ -1009,28 +1041,35 @@ text-align: center;
 
 /* For large devices */
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1040px) {
+    .swiper-slide{
+        flex-direction: row;
+    }
+    .sliderImg img,
+video {
+    width: 80%;
+}
     .slide-content p {
         width: 85%;
+        margin: 30px 0;
     }
     .slide-content {
         align-items: flex-start;
-        left: 50px;
+        left: 85px;
         position: relative;
     }
     .slide-content h2 {
         font-size: 3vw;
     }
-    
+
     .servicesSection {
         height: 100vh;
     }
-    
+
     .partnerslogos .row img {
         margin: 15px;
         width: 245px;
         height: 170px;
-    
     }
     .partnerTitle span {
         width: 60%;
@@ -1045,7 +1084,7 @@ text-align: center;
     .partnersSection {
         padding: 6rem 0;
     }
-    
+
     .aboutUsText span {
         font-size: 20px;
     }
@@ -1063,7 +1102,7 @@ text-align: center;
         margin: 25px;
     }
     .aboutUsContent {
-        width: 75%;
+        width: 75% !important;
     }
 
     .socialIcons:before {
@@ -1123,6 +1162,47 @@ text-align: center;
 }
 
 @media only screen and (min-width: 500px) and (max-width: 580px) {
+    .PartnerCont div {
+        width: 50%;
+    }
+    .aboutUsTitle {
+        margin-bottom: 3rem;
+    }
+    .partnerTitle {
+        font-size: 25px;
+        border-right: 2px solid var(--first-color);
+    }
+    .partnersSection {
+        padding: 3rem 0;
+    }
+    .partnerslogos .row img {
+        width: 97px;
+        height: 80px;
+        margin: 5px;
+    }
+    .slide-content p{
+        margin: 10px 0;
+    }
+    .swiper-slide {
+        flex-direction: column-reverse;
+    }
+    .sliderImg img,
+    video {
+        width: 70%;
+    }
+    .aboutUsText {
+        margin: 20px;
+    }
+    .aboutUsImg{
+        width: 80%;
+    }
+    .aboutUsContent {
+        flex-direction: column;
+        align-items: center;
+    }
+    .aboutUsTitle{
+        font-size: 26px;
+    }
     .bannerList {
         left: 10px;
     }
@@ -1152,6 +1232,10 @@ text-align: center;
 }
 
 @media (min-width: 1200px) {
+    .aboutUsContent {
+        width: 100%;
+    }
+
     .container,
     .container-lg,
     .container-md,
@@ -1163,8 +1247,6 @@ text-align: center;
 
 @media (min-width: 992px) {
 }
-
-
 
 /* Style the slider container */
 .swiper-container {
@@ -1179,16 +1261,14 @@ text-align: center;
     align-items: center;
 }
 
-.sliderImg{
+.sliderImg {
     flex-basis: 50%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.sliderImg img, video{
-width: 80%;
-}
+
 
 /* Position the slide content over the left half of the image */
 .slide-content {
@@ -1204,8 +1284,6 @@ width: 80%;
     font-size: 16px;
     color: #cbc8c2;
     text-align: justify;
-    /* width: 85%; */
-    margin: 30px 0;
 }
 .slide-content h2 {
     font-weight: bold;
@@ -1238,4 +1316,23 @@ width: 80%;
 .slider-button:focus {
     outline: none;
     box-shadow: 0 0 5px rgba(255, 153, 0, 0.5); /* Add a subtle box-shadow when focused */
+}
+
+
+.animate-slide-left {
+    animation-name: slideInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    opacity: 0; /* Start with opacity 0 so it fades in */
+}
+
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
