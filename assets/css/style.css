@@ -569,11 +569,11 @@ img {
 .aboutUsTitle::after {
     content: "";
     display: block;
-    width: 140px; /* Adjust the width of the border as needed */
-    height: 2px; /* Adjust the height of the border as needed */
+    width: 140px; 
+    height: 2px;
     background-color: var(--first-color);
-    margin: 0 auto; /* Center the border horizontally */
-    margin-top: 10px; /* Adjust the distance between text and border as needed */
+    margin: 0 auto; 
+    margin-top: 10px; 
 }
 
 .servicesSection {
@@ -820,6 +820,107 @@ footer {
     color: #a07d47;
 }
 
+/* Style the slider container */
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
+/* Style individual slides */
+.swiper-slide {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Define the initial position for slide-content */
+.slide-content {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+/* Apply animation when the slide is active */
+.swiper-slide-active .slide-content {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.sliderImg {
+    flex-basis: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Position the slide content over the left half of the image */
+.slide-content {
+    flex-basis: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 25px;
+}
+/* Style the description text */
+.slide-content p {
+    font-size: 16px;
+    color: #cbc8c2;
+    text-align: justify;
+}
+.slide-content h2 {
+    font-weight: bold;
+    text-align: left;
+    letter-spacing: -1px;
+    color: #ffffff;
+    margin: 0;
+}
+
+.slider-button {
+    display: flex;
+    align-items: start;
+    padding: 10px 20px;
+    background-color: var(--first-color);
+    color: white;
+    font-size: 18px;
+    border: none;
+    width: 130px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.slider-button:hover, .Website-button:hover {
+    background-color: #000000; /* Change to your desired hover color */
+    transform: scale(1.05); /* Add a slight scale effect on hover */
+    border: 2px solid var(--first-color);
+}
+
+.slider-button:focus, .Website-button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 153, 0, 0.5); /* Add a subtle box-shadow when focused */
+}
+
+.animate-slide-left {
+    animation-name: slideInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    opacity: 0; /* Start with opacity 0 so it fades in */
+}
+
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
 /*=============== BREAKPOINTS ===============*/
 @media only screen and (max-width: 992px) {
     .socialIcons:before {
@@ -843,10 +944,21 @@ footer {
 
 /* For small devices */
 @media screen and (max-width: 450px) {
+
+    .WebsitesPortCont{
+        flex-direction: column;
+    }
+    .WebsitesAllCards {
+        width: 100%;
+        margin: 10px 0;
+    }
+    .websitesPortMainCont {
+        width: 95%;
+    }
     .sliderImg img,
-video {
-    width: 80%;
-}
+    video {
+        width: 80%;
+    }
     .slide-content p {
         margin: 30px 0;
     }
@@ -969,9 +1081,9 @@ video {
     }
 
     .sliderImg img,
-video {
-    width: 45%;
-}
+    video {
+        width: 45%;
+    }
     .swiper-slide {
         flex-direction: column-reverse;
     }
@@ -1042,13 +1154,29 @@ video {
 /* For large devices */
 
 @media screen and (min-width: 1040px) {
-    .swiper-slide{
+    .WebsiteCard div {
+        height: 50%;
+    }
+    
+    .WebsitesAllCards {
+        width: 45%;
+        height: 500px;
+        margin: 10px;
+    }
+    .WebsitesPortCont {
+        margin: 40px;
+    }
+    .websitesPortMainCont {
+        width: 80%;
+    }
+    
+    .swiper-slide {
         flex-direction: row;
     }
     .sliderImg img,
-video {
-    width: 80%;
-}
+    video {
+        width: 80%;
+    }
     .slide-content p {
         width: 85%;
         margin: 30px 0;
@@ -1180,7 +1308,7 @@ video {
         height: 80px;
         margin: 5px;
     }
-    .slide-content p{
+    .slide-content p {
         margin: 10px 0;
     }
     .swiper-slide {
@@ -1193,14 +1321,14 @@ video {
     .aboutUsText {
         margin: 20px;
     }
-    .aboutUsImg{
+    .aboutUsImg {
         width: 80%;
     }
     .aboutUsContent {
         flex-direction: column;
         align-items: center;
     }
-    .aboutUsTitle{
+    .aboutUsTitle {
         font-size: 26px;
     }
     .bannerList {
@@ -1248,106 +1376,110 @@ video {
 @media (min-width: 992px) {
 }
 
-/* Style the slider container */
-.swiper-container {
-    width: 100%;
-    height: 100%;
+.webpage {
+    background-color: #000;
 }
 
-/* Style individual slides */
-.swiper-slide {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    transition: transform 0.5s ease-in-out;
-
+.webpageHeader {
+    color: #000;
 }
 
-    /* Define the initial position for slide-content */
-    .slide-content {
-        opacity: 0;
-        transform: translateX(-20px);
-        transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-    }
-
-    /* Apply animation when the slide is active */
-    .swiper-slide-active .slide-content {
-        opacity: 1;
-        transform: translateX(0);
-    }
-
-.sliderImg {
-    flex-basis: 50%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-/* Position the slide content over the left half of the image */
-.slide-content {
-    flex-basis: 50%;
-    height: 100%;
+.websitesPortMainCont {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 25px;
-}
-/* Style the description text */
-.slide-content p {
-    font-size: 16px;
-    color: #cbc8c2;
-    text-align: justify;
-}
-.slide-content h2 {
-    font-weight: bold;
-    text-align: left;
-    letter-spacing: -1px;
-    color: #ffffff;
-    margin: 0;
+    align-items: center;
 }
 
-.slider-button {
+.WebsitesPortCont {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.websiteCardImg {
+    padding: 5px;
+}
+.websiteCardImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.WebsiteCard {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    border: 3px solid var(--first-color);
+    background-color: #f9f9f9;
+}
+.WebsiteCard div {
+    width: 100%;}
+
+.websiteCardText h4 {
+    text-align: center;
+    font-size: 21px;
+    color: var(--first-color);
+    font-weight: bold;
+    margin: 10px;
+}
+.websiteCardText p {
+    font-size: 12px;
+    text-align: justify;
+}
+.Website-button {
     display: flex;
     align-items: start;
-    padding: 10px 20px;
+    padding: 5px 20px;
     background-color: var(--first-color);
     color: white;
     font-size: 18px;
     border: none;
-    width: 130px;
+    width: 87px;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.slider-button:hover {
-    background-color: #000000; /* Change to your desired hover color */
-    transform: scale(1.05); /* Add a slight scale effect on hover */
-    border: 2px solid var(--first-color);
+.websiteCardText a{
+    display: flex;
+    justify-content: center;
 }
 
-.slider-button:focus {
-    outline: none;
-    box-shadow: 0 0 5px rgba(255, 153, 0, 0.5); /* Add a subtle box-shadow when focused */
+.websitesPortTitle{
+    text-align: center;
+    color: var(--first-color);
+    margin-bottom: 2rem;
+}
+.websitesPortTitle::after{
+    content: "";
+    display: block;
+    width: 140px;
+    height: 2px;
+    background-color: var(--first-color);
+    margin: 0 auto;
+    margin-top: 10px;
+}
+.websiteCardText{
+    padding: 0 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+
 }
 
-
-.animate-slide-left {
-    animation-name: slideInLeft;
-    animation-duration: 1s;
-    animation-timing-function: ease;
-    opacity: 0; /* Start with opacity 0 so it fades in */
+.websitesPort {
+    background-image: url(../img/goldbackground00.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
-@keyframes slideInLeft {
-    0% {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
+.webbannermobile{
+    width: 100%;
+}
+.webbannermobile img{
+    width: 100%;
 }
