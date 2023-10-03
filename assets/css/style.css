@@ -944,7 +944,9 @@ footer {
 
 /* For small devices */
 @media screen and (max-width: 450px) {
-
+    .webbannermobile{
+        width: 100%;
+    }
     .WebsitesPortCont{
         flex-direction: column;
     }
@@ -1154,6 +1156,13 @@ footer {
 /* For large devices */
 
 @media screen and (min-width: 1040px) {
+    .webbannermobile{
+        display: none;
+    }
+    .webMainBanner {
+        background-image: url(../img/webBanner.png);
+        height: 100vh;
+    }
     .WebsiteCard div {
         height: 50%;
     }
@@ -1475,11 +1484,4 @@ footer {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-}
-
-.webbannermobile{
-    width: 100%;
-}
-.webbannermobile img{
-    width: 100%;
 }
