@@ -512,13 +512,6 @@ img {
     line-height: 0.5em;
     letter-spacing: -1px;
 }
-.scroll-down {
-    position: absolute;
-    bottom: 20px; /* Adjust the distance from the bottom as needed */
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2;
-}
 
 .scroll-down i {
     font-size: 24px; /* Adjust the size of the scroll-down icon */
@@ -569,14 +562,15 @@ img {
 .aboutUsTitle::after {
     content: "";
     display: block;
-    width: 140px; 
+    width: 140px;
     height: 2px;
     background-color: var(--first-color);
-    margin: 0 auto; 
-    margin-top: 10px; 
+    margin: 0 auto;
+    margin-top: 10px;
 }
 
-.servicesSection {
+.servicesSection,
+.WebsitesTypes {
     background-image: url(../img/partners/bg.png);
     background-color: #000000;
     border-top: 10px solid var(--first-color);
@@ -834,14 +828,11 @@ footer {
     transition: transform 0.5s ease-in-out;
 }
 
-/* Define the initial position for slide-content */
 .slide-content {
     opacity: 0;
     transform: translateX(-20px);
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
-
-/* Apply animation when the slide is active */
 .swiper-slide-active .slide-content {
     opacity: 1;
     transform: translateX(0);
@@ -892,13 +883,15 @@ footer {
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.slider-button:hover, .Website-button:hover {
+.slider-button:hover,
+.Website-button:hover {
     background-color: #000000; /* Change to your desired hover color */
     transform: scale(1.05); /* Add a slight scale effect on hover */
     border: 2px solid var(--first-color);
 }
 
-.slider-button:focus, .Website-button:focus {
+.slider-button:focus,
+.Website-button:focus {
     outline: none;
     box-shadow: 0 0 5px rgba(255, 153, 0, 0.5); /* Add a subtle box-shadow when focused */
 }
@@ -944,10 +937,15 @@ footer {
 
 /* For small devices */
 @media screen and (max-width: 450px) {
-    .webbannermobile{
+    .webMainBanner {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+    .webbannermobile {
         width: 100%;
     }
-    .WebsitesPortCont{
+    .WebsitesPortCont {
         flex-direction: column;
     }
     .WebsitesAllCards {
@@ -1063,6 +1061,22 @@ footer {
 
 /* For medium devices */
 @media screen and (min-width: 767px) {
+    .WebsitesPortCont {
+        justify-content: space-between;
+    }
+
+    .webMainBanner {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .WebsitesAllCards {
+        width: 50%;
+        /* height: 500px; */
+        margin: 10px;
+    }
+
     .PartnerCont div {
         width: 50%;
     }
@@ -1153,10 +1167,16 @@ footer {
     }
 }
 
-/* For large devices */
-
 @media screen and (min-width: 1040px) {
-    .webbannermobile{
+    .scroll-down {
+        position: absolute;
+        bottom: 20px; /* Adjust the distance from the bottom as needed */
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+    }
+
+    .webbannermobile {
         display: none;
     }
     .webMainBanner {
@@ -1166,7 +1186,7 @@ footer {
     .WebsiteCard div {
         height: 50%;
     }
-    
+
     .WebsitesAllCards {
         width: 45%;
         height: 500px;
@@ -1174,11 +1194,12 @@ footer {
     }
     .WebsitesPortCont {
         margin: 40px;
+        justify-content: space-between;
     }
     .websitesPortMainCont {
         width: 80%;
     }
-    
+
     .swiper-slide {
         flex-direction: row;
     }
@@ -1299,6 +1320,25 @@ footer {
 }
 
 @media only screen and (min-width: 500px) and (max-width: 580px) {
+    .webMainBanner {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+    .WebsitesPortCont {
+        flex-direction: column;
+    }
+
+    .webMainBanner {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .WebsitesAllCards {
+        margin: 10px;
+    }
+
     .PartnerCont div {
         width: 50%;
     }
@@ -1385,103 +1425,122 @@ footer {
 @media (min-width: 992px) {
 }
 
-.webpage {
+.websiteTypesMain {
     background-color: #000;
 }
 
 .webpageHeader {
     color: #000;
 }
-
-.websitesPortMainCont {
+/* Container for website types */
+.websiteTypesContanier {
+    width: 100%;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    background-color: #000; /* Background color for the container */
 }
 
-.WebsitesPortCont {
-    width: 100%;
+/* Flex container for each type */
+.websiteTypes {
+    width: 95%;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap; /* Allow types to wrap to the next row on smaller screens */
 }
 
-
-
-.websiteCardImg {
+/* Individual website type */
+.eachType {
     padding: 5px;
-}
-.websiteCardImg img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.WebsiteCard {
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    border: 3px solid var(--first-color);
-    background-color: #f9f9f9;
-}
-.WebsiteCard div {
-    width: 100%;}
-
-.websiteCardText h4 {
-    text-align: center;
-    font-size: 21px;
-    color: var(--first-color);
-    font-weight: bold;
-    margin: 10px;
-}
-.websiteCardText p {
-    font-size: 12px;
-    text-align: justify;
-}
-.Website-button {
-    display: flex;
-    align-items: start;
-    padding: 5px 20px;
-    background-color: var(--first-color);
-    color: white;
-    font-size: 18px;
-    border: none;
-    width: 87px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.websiteCardText a{
-    display: flex;
-    justify-content: center;
-}
-
-.websitesPortTitle{
-    text-align: center;
-    color: var(--first-color);
-    margin-bottom: 2rem;
-}
-.websitesPortTitle::after{
-    content: "";
-    display: block;
-    width: 140px;
-    height: 2px;
-    background-color: var(--first-color);
-    margin: 0 auto;
-    margin-top: 10px;
-}
-.websiteCardText{
-    padding: 0 20px 20px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; 
-
+    justify-content: center;
+    width: 30%;
+    margin: 15px;
+    border: 4px solid var(--first-color);
+    border-radius: 7px;
+    box-shadow: 2px 2px 20px #b28a4f;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer; /* Add cursor pointer for hover effect */
+    color: #fff; /* Text color */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add smooth transition */
 }
 
-.websitesPort {
-    background-image: url(../img/goldbackground00.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+/* Pseudo-element for hover effect */
+.eachType::before {
+    content: ""; /* Add a pseudo-element for hover effect */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    opacity: 0;
+    transition: opacity 0.3s; /* Smooth transition for overlay */
+}
+
+/* Hover effect */
+.eachType:hover::before {
+    opacity: 1; /* Show the overlay on hover */
+}
+
+/* Title and description container */
+.intro {
+    position: absolute;
+    bottom: -100%; /* Initially hide the intro below */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(49 49 49 / 0.5%);
+    transition: bottom 0.8s ease; /* Add smooth transition for intro */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Title style */
+.typeTitle {
+    font-size: 32px;
+    font-weight: bold;    margin-bottom: 10px;
+    text-transform: uppercase;
+    color: var(--first-color);
+}
+
+/* Description style */
+.typeDescription {
+    text-align: justify;
+    font-size: 1rem;
+    opacity: 0; /* Initially hide description */
+    transition: opacity 0.3s ease; /* Add smooth transition for description */
+}
+
+/* Hover effect for showing title and description */
+.eachType:hover .intro {
+    bottom: 0;
+}
+
+/* Hover effect for showing description */
+.eachType:hover .typeDescription {
+    opacity: 1;
+}
+.eachType:hover .typesSpan {
+    opacity: 0;
+}
+.typesSpan{
+    text-align: center;
+    color: var(--first-color);
+    font-size: 32px;
+    font-weight: bold;
+    margin: 3px;
+}
+
+.websiteTypestitle{
+    color: var(--first-color);
+    text-align: center;
+}
+.webMainBanner{
+    border-bottom: 10px solid var(--first-color);
 }

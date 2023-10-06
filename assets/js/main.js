@@ -38,25 +38,6 @@ function scrollHeader() {
 }
 window.addEventListener("scroll", scrollHeader);
 
-/*=============== SHOW SCROLL UP ===============*/
-function scrollUp() {
-    const scrollUp = document.getElementById("scroll-up");
-    // When the scroll is higher than 350 viewport height, add the show-scroll class to the a tag with the scroll-top class
-    if (this.scrollY >= 350) scrollUp.classList.add("show-scroll");
-    else scrollUp.classList.remove("show-scroll");
-}
-window.addEventListener("scroll", scrollUp);
-
-// type writer effect
-var typed = new Typed(".second-span", {
-    strings: ["Brands.", "Stories.", "Memories."],
-    typeSpeed: 150,
-    backSpeed: 150,
-    loop: true,
-});
-
-//fade in banner animation
-
 // Function to initialize ScrollReveal
 function initializeScrollReveal(options) {
     return ScrollReveal(options);
@@ -80,66 +61,19 @@ function animateBannerElements() {
     sr.reveal(paragraphElement, { delay: 400 });
     sr.reveal(listElement, { delay: 600 });
 }
-
-// Function to add animations for slider content
-function animateSliderContent() {
+animateBannerElements();
+// Function to add animations for banner elements
+function animateAboutUsImg() {
     const sr = initializeScrollReveal({
         origin: "left",
         distance: "70px",
         duration: 1000,
         delay: 400,
     });
-
-    function fadeOutSlideContent() {
-        const slideContent = document.querySelector(".slide-content");
-        slideContent.classList.add("fade-out");
-    }
-
-    setTimeout(fadeOutSlideContent, 6000);
-
-    const animateElements = document.querySelectorAll(".animate-element");
-    animateElements.forEach((element) => {
-        sr.reveal(element);
-    });
-
-    sr.reveal(".animate-element", { interval: 500 });
+    const aboutUsImgPic = document.querySelector(".aboutUsImgPic");
+    sr.reveal(aboutUsImgPic);
 }
-
-let isSwiperInitialized = false;
-
-// Function to initialize Swiper for the slider
-function initializeSwiper() {
-    if (!isSwiperInitialized) {
-        const mySwiper = new Swiper(".swiper-container", {
-            autoplay: {
-                delay: 5000,
-            },
-            speed: 1000, // Adjust slide transition speed (in milliseconds)
-            slidesPerView: 1, // Number of slides visible at once
-            loop: true, // Enable loop mode for continuous sliding
-        });
-        const videoElements = document.querySelectorAll(".swiper-slide-video");
-        videoElements.forEach((video) => {
-            video.addEventListener("ended", function () {
-                video.currentTime = 0;
-                video.play();
-            });
-        });
-        isSwiperInitialized = true;
-    }
-}
-// Use Intersection Observer to detect when the "services" section is visible
-const servicesSection = document.getElementById("services");
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            initializeSwiper(); // Initialize Swiper when section is visible
-            observer.unobserve(servicesSection); // Stop observing once Swiper is initialized
-        }
-    });
-});
-// Start observing the "services" section
-observer.observe(servicesSection);
+animateAboutUsImg();
 
 // Function to add animations for contact form
 function animateContactForm() {
@@ -151,6 +85,7 @@ function animateContactForm() {
 
     sr.reveal(".animate-element-from-down", { delay: 200 });
 }
+animateContactForm();
 
 // Function to add animations for partner logos
 function animatePartnerLogos() {
@@ -163,12 +98,17 @@ function animatePartnerLogos() {
 
     sr.reveal(".partner-logo", { interval: 200 });
 }
+animatePartnerLogos();
 
-// Add event listeners to trigger animations on DOMContentLoaded
-document.addEventListener("DOMContentLoaded", () => {
-    animateBannerElements();
-    animateSliderContent();
-    initializeSwiper();
-    animateContactForm();
-    animatePartnerLogos();
+// Wait for the DOM to be fully loaded
+document.addEventListener("DOMContentLoaded", function () {
+    // Initialize Swiper
+    const mySwiper = new Swiper(".swiper-container", {
+        autoplay: {
+            delay: 5000,
+        },
+        speed: 1000,
+        slidesPerView: 1,
+        loop: true,
+    });
 });
