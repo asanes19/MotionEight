@@ -70,8 +70,8 @@ function animateAboutUsImg() {
         duration: 1000,
         delay: 400,
     });
-    const aboutUsImgPic = document.querySelector(".aboutUsImgPic");
-    sr.reveal(aboutUsImgPic);
+    sr.reveal(".animate-from-the-left", { delay: 50 });
+
 }
 animateAboutUsImg();
 
@@ -112,3 +112,6 @@ document.addEventListener("DOMContentLoaded", function () {
         loop: true,
     });
 });
+
+
+
