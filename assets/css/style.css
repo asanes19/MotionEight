@@ -203,8 +203,7 @@ img {
 @media screen and (max-width: 767px) {
     .nav__menu {
         position: fixed;
-        background-color: hsl(0, 0%, 100%, 0.1);
-
+        background-color: hsl(0deg 0% 0%);
         top: 0;
         right: -100%;
         width: 100%;
@@ -213,7 +212,6 @@ img {
         transition: 0.3s;
     }
 }
-
 .nav__list {
     display: flex;
     flex-direction: column;
@@ -232,11 +230,11 @@ img {
 }
 .nav__close {
     font-size: 2rem;
-    column-rule: var(--white-color);
     position: absolute;
     top: 1rem;
-    right: 1rem;
+    left: 1rem;
     cursor: pointer;
+    color: var(--first-color);
 }
 /* Show menu items */
 .show-menu {
@@ -900,7 +898,7 @@ footer {
     opacity: 0; /* Start with opacity 0 so it fades in */
 }
 
-.websiteTypesMain {
+.blackMain {
     background-color: #000;
 }
 /* Container for website types */
@@ -1002,6 +1000,21 @@ footer {
 .eachType:hover .typesSpan {
     opacity: 0;
 }
+/* Your existing styles */
+
+/* Add a class to target elements on click */
+.eachType.active::before {
+    opacity: 1;
+}
+
+.eachType.active .intro {
+    bottom: 0;
+}
+
+.eachType.active .typeDescription {
+    opacity: 1;
+}
+
 
 .typesSpan {
     text-align: center;
@@ -1016,10 +1029,11 @@ footer {
     text-align: center;
 }
 
-.webMainBanner {
+.webMainBanner,
+.brandingMainBanner,
+.VidMainBanner {
     border-bottom: 10px solid var(--first-color);
 }
-
 
 @keyframes slideInLeft {
     0% {
@@ -1032,8 +1046,58 @@ footer {
     }
 }
 
+.eachWebsite {
+    width: 100%;
+}
+
+.websiteImg {
+    width: 100%;
+    height: 100%;
+}
+
+.websiteImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the entire div */
+}
+
+.websiteContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    text-align: justify;
+}
+.websiteContent h2 {
+    color: var(--first-color);
+}
+.websiteContent p {
+    color: #cbc8c2;
+    font-weight: 100;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 10px 10px 10px 0;
+    border-radius: 5px;
+}
+.webShadow {
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.938813025210084) 16%, rgba(252, 176, 69, 0) 100%);
+}
 /*=============== BREAKPOINTS ===============*/
 @media only screen and (max-width: 992px) {
+    .vidsPortRow {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .eachVid {
+        width: 100%;
+        height: 400px;
+    }
     .socialIcons:before {
         height: 240px;
         top: 176px;
@@ -1043,7 +1107,7 @@ footer {
         bottom: 176px;
     }
     .nav__link {
-        font-size: 11px;
+        font-size: 20px;
     }
     .nav__logo {
         column-gap: 0.2rem;
@@ -1055,38 +1119,47 @@ footer {
 
 /* For small devices */
 @media screen and (max-width: 450px) {
+    .vidsPortRow {
+        flex-direction: column;
+    }
+    .eachVid {
+        height: 220px;
+    }
     .slider-button {
         padding: 7px 18px;
         font-size: 12px;
     }
-    .websiteContent p{
+    .websiteContent p {
         font-size: 10px;
         margin: 0;
     }
-    .websiteContent h2{
+    .websiteContent h2 {
         font-size: 20px;
     }
-    .typeTitle{
+    .typeTitle {
         font-size: 25px;
     }
-    
+
     .scroll-down {
-display: none;
+        display: none;
     }
-    .typeDescription{
+    .typeDescription {
         font-size: 11px;
-        
     }
 
     .websiteTypes {
-flex-direction: column;
+        flex-direction: column;
     }
-    .webMainBanner {
+    .webMainBanner,
+    .brandingMainBanner,
+    .VidMainBanner {
         align-items: center;
         display: flex;
         flex-direction: column;
     }
-    .webbannermobile {
+    .webbannermobile,
+    .brandingBannermobile,
+    .vidbannermobile {
         width: 100%;
     }
     .sliderImg img,
@@ -1195,11 +1268,14 @@ flex-direction: column;
 
 /* For medium devices */
 @media screen and (min-width: 767px) {
-    .websiteTypes{
+
+    .websiteTypes {
         justify-content: center;
     }
 
-    .webMainBanner {
+    .webMainBanner,
+    .brandingMainBanner,
+    .VidMainBanner {
         align-items: center;
         display: flex;
         flex-direction: column;
@@ -1292,11 +1368,8 @@ flex-direction: column;
 }
 
 @media screen and (min-width: 1040px) {
-    .slider-button {
-        padding: 10px 25px;
-        font-size: 18px;
-    }
-    .websiteContent p{
+
+    .websiteContent p {
         margin: 20px 0;
         font-size: 14px;
     }
@@ -1310,17 +1383,16 @@ flex-direction: column;
         position: absolute; /* Absolute positioning for the image */
         top: 0;
         left: 0;
-        
     }
     .eachWebsite {
         position: relative; /* Relative positioning for containing div */
         height: 100vh;
     }
-    
-    .typeDescription{
-        font-size: 20px;
+
+    .typeDescription {
+        font-size: 20px !important;
     }
-    .eachType{
+    .eachType {
         width: 31%;
     }
     .scroll-down {
@@ -1331,12 +1403,22 @@ flex-direction: column;
         z-index: 2;
     }
 
-    .webbannermobile {
+    .webbannermobile,
+    .brandingBannermobile,
+    .vidbannermobile {
         display: none;
     }
     .webMainBanner {
         background-image: url(../img/webBanner.png);
         height: 100vh;
+    }
+    .brandingMainBanner {
+        height: 100vh;
+        background-image: url(../img/brandingBanner.png);
+    }
+    .VidMainBanner {
+        height: 100vh;
+        background-image: url(../img/vidadsBanner.png);
     }
 
     .swiper-slide {
@@ -1459,7 +1541,9 @@ flex-direction: column;
 }
 
 @media only screen and (min-width: 500px) and (max-width: 580px) {
-    .webMainBanner {
+    .webMainBanner,
+    .brandingMainBanner,
+    .VidMainBanner {
         align-items: center;
         display: flex;
         flex-direction: column;
@@ -1468,7 +1552,9 @@ flex-direction: column;
         flex-direction: column;
     }
 
-    .webMainBanner {
+    .webMainBanner,
+    .brandingMainBanner,
+    .VidMainBanner {
         align-items: center;
         display: flex;
         flex-direction: column;
@@ -1563,63 +1649,117 @@ flex-direction: column;
     .typeDescription {
         font-size: 8px;
     }
-    .typeTitle{
+    .typeTitle {
         font-size: 21px;
     }
 }
 @media (min-width: 1024px) {
-    .eachType{
+    .eachVid {
+        width: 33.3333%;
+        height: 350px;
+    }
+    .slider-button {
+        padding: 10px 25px;
+        font-size: 18px;
+    }
+    .eachType {
         width: 30%;
     }
     .typeDescription {
         font-size: 10px;
     }
-    .typeTitle{
+    .typeTitle {
         font-size: 21px;
     }
 }
-
-.eachWebsite {
-    width: 100%;
-}
-
-.websiteImg {
+.video-thumbnail {
+    cursor: pointer;
     width: 100%;
     height: 100%;
-    
+    object-fit: cover;
+    opacity: 0.6;
 }
 
-.websiteImg img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensure the image covers the entire div */
-    
-}
-
-.websiteContent {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 20px;
-    text-align: justify;
-}
-.websiteContent h2{
-    color: var(--first-color);
-}
-.websiteContent p{
-    color: #cbc8c2;
-    font-weight: 100;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
-    background-color: rgba(0, 0, 0, 0.1);
-    padding:  10px 10px 10px 0;
-    border-radius: 5px;
-}
-.webShadow {
-    width: 100%;
-    position: absolute;
-    height: 100%;
-    bottom: 0;
+.video-popup {
+    display: none;
+    position: fixed;
+    top: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(90deg, rgba(0,0,0,0.938813025210084) 16%, rgba(252,176,69,0) 100%);
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 9999;
+    text-align: center;
+    justify-content: center;
+}
+.videoPort {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.videoPort video {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.close-popup {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 26px;
+    transition: font-size 1s;
+}
+.close-popup:hover {
+    color: var(--first-color);
+    font-size: 34px;
+}
+.vidsPortRow {
+    display: flex;
+}
+
+.play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 45px;
+    color: var(--first-color);
+    z-index: 1;
+    cursor: pointer;
+}
+.eachVid {
+    position: relative;
+    overflow: hidden; /* Ensure the overflow is hidden for the background */
+}
+
+.eachVid::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #bd93547e; /* Gold background color */
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.8s; /* Transition transform property with a 0.5s duration */
+    z-index: 1; /* Place it below other content */
+    pointer-events: none; /* Ensure it doesn't interfere with interaction */
+}
+
+.eachVid:hover::before {
+    opacity: 1;
+}
+
+.eachVid:hover .play-icon {
+    z-index: 2;
+    color: white;
 }
