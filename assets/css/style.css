@@ -1763,3 +1763,23 @@ footer {
     z-index: 2;
     color: white;
 }
+
+.logosCont{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.logos{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.logos img{
+    width: 33.333%;
+    height: 450px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 2px solid var(--first-color);
+}
