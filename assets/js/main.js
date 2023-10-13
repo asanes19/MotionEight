@@ -104,9 +104,9 @@ animatePartnerLogos();
 document.addEventListener("DOMContentLoaded", function () {
     // Initialize Swiper
     const mySwiper = new Swiper(".swiper-container", {
-        // autoplay: {
-        //     delay: 5000,
-        // },
+        autoplay: {
+            delay: 5000,
+        },
         speed: 1000,
         slidesPerView: 1,
         loop: true,

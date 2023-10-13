@@ -201,6 +201,7 @@ img {
     cursor: pointer;
 }
 @media screen and (max-width: 767px) {
+
     .nav__menu {
         position: fixed;
         background-color: hsl(0deg 0% 0%);
@@ -816,6 +817,8 @@ footer {
 .swiper-container {
     width: 100%;
     height: 100%;
+    max-height: 1157px;
+
 }
 
 /* Style individual slides */
@@ -1107,7 +1110,7 @@ footer {
         bottom: 176px;
     }
     .nav__link {
-        font-size: 20px;
+        font-size: 11px;
     }
     .nav__logo {
         column-gap: 0.2rem;
@@ -1119,6 +1122,18 @@ footer {
 
 /* For small devices */
 @media screen and (max-width: 450px) {
+    .logos{
+        flex-direction: column;
+    }
+    .brandingImgName h2 {
+font-size: 21px;
+    }
+    .brandingImgName img {
+        width: 40px;
+    }
+    .companyName {
+        margin-bottom: 10px;
+    }
     .vidsPortRow {
         flex-direction: column;
     }
@@ -1268,6 +1283,30 @@ footer {
 
 /* For medium devices */
 @media screen and (min-width: 767px) {
+    .logos {
+        flex-wrap: wrap;
+    }
+    .logos img {
+        width: 47.333%;
+        /* height: 450px; */
+    }
+        .halfImg{
+        width: 50%;
+    }    
+    .image-container{
+        display: flex;
+    }
+    
+
+    .companyName {
+        margin-bottom: 20px;
+    }
+    
+
+
+    .brandingImgName img {
+        width: 80px;
+    }
 
     .websiteTypes {
         justify-content: center;
@@ -1368,7 +1407,13 @@ footer {
 }
 
 @media screen and (min-width: 1040px) {
-
+    .logos {
+        flex-wrap: nowrap;
+    }
+    .logos img{
+        width: 33.333%;
+        height: 450px;
+    }
     .websiteContent p {
         margin: 20px 0;
         font-size: 14px;
@@ -1541,6 +1586,16 @@ footer {
 }
 
 @media only screen and (min-width: 500px) and (max-width: 580px) {
+    .brandingImgName h2 {
+        font-size: 27px;
+            }
+    .brandingImgName img {
+        width: 75px;
+    }
+    .logos {
+
+        flex-direction: column;
+    }
     .webMainBanner,
     .brandingMainBanner,
     .VidMainBanner {
@@ -1777,9 +1832,69 @@ footer {
     justify-content: center;
 }
 .logos img{
-    width: 33.333%;
-    height: 450px;
     margin: 10px;
     border-radius: 5px;
     border: 2px solid var(--first-color);
+}
+/* Your existing styles remain mostly unchanged */
+
+.brandingCont {
+    width: 100%;
+    padding: 0 0 5rem 0;
+}
+
+.companyName {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.brandingImgName {
+    display: flex;
+    justify-content: center;
+}
+
+.brandingImgName img {
+    margin-right: 10px;
+}
+
+.brandingImgName h2 {
+    color: var(--first-color);
+    align-items: center;
+    display: flex;
+    margin: 0;
+}
+
+.brandingDisc h4 {
+    color: white;
+    font-size: 16px;
+}
+
+.brandingImages {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Modify this part for the Swiper slide styles */
+.brandingSwiperSlide {
+    width: 100%; /* Full-width slide */
+    display: flex;
+    justify-content: center; /* Display images side by side */
+    box-sizing: border-box; /* Include padding in width calculations */
+}
+
+.brandingSwiperSlide img {
+    height: auto;
+    max-height: 1157px;
+    border-radius: 5px;
+    border: 1px solid var(--first-color);
+    object-fit: cover;
+    width: 900px;
+}
+
+
+.halfImg{
+    padding: 10px;
 }
