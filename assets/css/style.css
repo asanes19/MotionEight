@@ -137,18 +137,11 @@ img {
     overflow: hidden;
 }
 
-/*=============== HEADER & NAV BAR ===============*/
-
-/* .scroll-header {
-    border-radius: 0 0 1rem 1rem;
-    background-color: rgb(0, 0, 0);
-    background-size: 200%;
-    animation: bg-anim 7s infinite alternate;
-    box-shadow: 0 2px 4px hsla(0, 0%, 1%, 1);
-    z-index: 1000;
-} */
 
 /*=============== HEADER & NAV BAR ===============*/
+.nav__item{
+    cursor: pointer;
+}
 .site_logo {
     width: 10%;
     /* padding: 10px 0 10px 10px; */
@@ -221,12 +214,12 @@ img {
     padding-top: 9rem;
     margin: 0;
 }
-.nav__link {
+.nav__link, .subnav__link {
     color: white;
     transition: 0.3s;
     font-weight: bolder;
 }
-.nav__link:hover {
+.nav__link:hover , .subnav__link:hover {
     color: var(--first-color) !important;
 }
 .nav__close {
@@ -570,7 +563,7 @@ img {
 
 .servicesSection,
 .WebsitesTypes {
-    background-image: url(../img/partners/bg.png);
+    background-image: url(../img/goldbackground00.png);
     background-color: #000000;
     border-top: 10px solid var(--first-color);
     margin-top: 100px;
@@ -1897,4 +1890,28 @@ font-size: 21px;
 
 .halfImg{
     padding: 10px;
+}
+
+.sub-menu {
+    display: none;
+    position: absolute;
+    padding: 10px 20px;
+    background-color: #000;
+    margin-top: 13px;
+    right: 456px;
+    border-radius: 5px;
+    border: 1px solid var(--first-color);
+}
+.sublist{
+    margin: 15px 0;
+}
+
+.sublist::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 1px;
+    background-color: var(--first-color);
+    margin: 0 auto;
+    opacity: 0.3;
 }

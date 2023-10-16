@@ -3,20 +3,14 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="keywords" content="Digital agency, web design, web development, branding, motion graphics, video advertising, social media ads" />
-        <meta name="title" content="Digital Agency Services | Motion Eight" />
-        <meta
-            name="description"
-            content="Motion Eight is a leading digital agency dedicated to providing top-notch web design, development, and branding services. Our expertise also extends to motion graphics, video advertising, and social media ads. Join us on our journey to transform businesses with innovative strategies and cutting-edge technologies."
-        />
+        <meta name="keywords" content="Branding Portfolio, Logos, Branding Projects, Creative Design, Motion Eight" />
+        <meta name="title" content="Motion Eight - Branding Portfolio" />
+        <meta name="description" content="Explore Motion Eight's branding portfolio, showcasing logos and branding projects. Our creative designs help businesses stand out and make a lasting impression." />
+
         <!--=============== FAVICON ===============-->
         <link rel="icon" href="../assets/img/LightMotion8Png.png" type="image/x-icon" />
 
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
         <!--=============== REMIX ICONS ===============-->
-        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
         <!--=============== CSS ===============-->
@@ -24,34 +18,43 @@
         <link rel="stylesheet" href="../assets/css/style.css" />
         <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css" />
 
-        <!--================== Unicons CSS =================-->
-        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" disabled />
-
-        <title>Motion Eight</title>
+        <title>M8 - Branding</title>
     </head>
     <body>
         <!--==================== HEADER ====================-->
         <header class="header" id="header">
             <nav class="nav container">
-                <a href="index.html" class="nav__logo">
+                <a href="" class="nav__logo">
                     <i> <img class="site_logo" src="../assets/img/LightMotion8Png.png" /> Motion EIght</i>
                 </a>
                 <div class="nav__menu" id="nav-menu">
                     <ul class="nav__list">
                         <li class="nav__item">
-                            <a href="../index.html" class="nav__link">Home</a>
+                            <a href="../index.html" class="nav__link active-link">Home</a>
                         </li>
                         <li class="nav__item">
                             <a href="../index.html#aboutUs" class="nav__link">About us</a>
                         </li>
                         <li class="nav__item">
-                            <a href="#services" class="nav__link">Services</a>
+                            <a href="../index.html#services" class="nav__link">Services</a>
                         </li>
                         <li class="nav__item">
-                            <a href="#" class="nav__link">Our Work</a>
+                            <a class="nav__link" id="our-work">Our Work</a>
+                            <ul class="sub-menu" id="work-submenu">
+                                <li class="nav__item sublist">
+                                    <a href="web.html" class="subnav__link">Web Dev & Design</a>
+                                </li>
+                                <li class="nav__item sublist">
+                                    <a href="Videos.html" class="subnav__link">Video Advertising</a>
+                                </li>
+                                <li class="nav__item sublist">
+                                    <a href="branding.html" class="subnav__link">Branding</a>
+                                </li>
+                                <!-- Add more sub-menu items as needed -->
+                            </ul>
                         </li>
                         <li class="nav__item">
-                            <a href="#contact" class="nav__link">Contact Us</a>
+                            <a href="../index.html#contact" class="nav__link">Contact Us</a>
                         </li>
                     </ul>
 
@@ -71,26 +74,25 @@
 
         <main style="background-color: #000;" class="main">
             <!-- main banner -->
-            <section class="brandingMainBanner">
+            <section id="brandingMainBanner" class="brandingMainBanner">
                 <div class="brandingBannermobile">
                     <img src="../assets/img/brandingBannerMobile.png" />
                 </div>
                 <div class="scroll-down">
-                    <a href="#aboutUs"><i class="fas fa-chevron-down"></i></a>
+                    <a href="#logosSec"><i class="fas fa-chevron-down"></i></a>
                 </div>
             </section>
 
-            <section class="logosSec section">
+            <section id="logosSec" class="logosSec section">
                 <h2 class="aboutUsTitle">Our Logos</h2>
                 <div class="logosCont">
                     <div class="logos">
                         <img class="partner-logo" src="../assets/img/partners/1.png" loading="lazy" />
-                        <img class="partner-logo" src="../assets/img/partners/2.png" loading="lazy" />
+                        <img class="partner-logo" src="../assets/img/partners/5.png" loading="lazy" />
                         <img class="partner-logo" src="../assets/img/partners/3.png" loading="lazy" />
                     </div>
                     <div class="logos">
                         <img class="partner-logo" src="../assets/img/partners/4.png" loading="lazy" />
-                        <img class="partner-logo" src="../assets/img/partners/5.png" loading="lazy" />
                     </div>
                 </div>
             </section>
@@ -318,7 +320,7 @@
                             <p>Copyright &copy; <span id="current-year">2023</span> Motion Eight Team</p>
                         </div>
                         <div class="col-sm-2 top">
-                            <a href="#mainBanner">
+                            <a href="#brandingMainBanner">
                                 <span id="to-top">
                                     <i class="fa fa-chevron-up" aria-hidden="true"></i>
                                 </span>
@@ -328,16 +330,18 @@
                             <ul>
                                 <ul>
                                     <li>
-                                        <a href="#"><i class="fab fa-facebook"></i></a>
+                                        <a href="https://www.facebook.com/profile.php?id=61551200823579"><i class="fab fa-facebook"></i></a>
                                     </li>
                                     <li>
-                                        <a href="#"><i class="fab fa-instagram"></i></a>
+                                        <a href="https://www.instagram.com/motion.eight/"><i class="fab fa-instagram"></i></a>
                                     </li>
                                     <li>
-                                        <a href="mailto:your@email.com"><i class="far fa-envelope"></i></a>
+                                        <a href="mailto:motion-eight@outlook.com">
+                                            <i class="far fa-envelope"></i>
+                                        </a>
                                     </li>
                                     <li>
-                                        <a href="tel:+123456789"><i class="fas fa-phone"></i></a>
+                                        <a href="tel:+971562588105"><i class="fas fa-phone"></i></a>
                                     </li>
                                 </ul>
                             </ul>

@@ -115,36 +115,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
-// JavaScript for opening and closing video popup
-document.addEventListener("DOMContentLoaded", function () {
-    const playIcons = document.querySelectorAll(".play-icon");
-    const videoPopups = document.querySelectorAll(".video-popup");
-    const closeButtons = document.querySelectorAll(".close-popup");
-
-    playIcons.forEach(function (playIcon, index) {
-        const videoPopup = videoPopups[index];
-        const closeButton = closeButtons[index];
-
-        // Open video popup when the play icon is clicked
-        playIcon.addEventListener("click", function () {
-            videoPopup.style.display = "block";
-        });
-
-        // Close video popup when the close button is clicked
-        closeButton.addEventListener("click", function () {
-            videoPopup.style.display = "none";
-        });
-    });
+// JavaScript to toggle sub-menu visibility
+document.getElementById("our-work").addEventListener("click", function (e) {
+    e.preventDefault();
+    var subMenu = document.getElementById("work-submenu");
+    if (subMenu.style.display === "block") {
+        subMenu.style.display = "none";
+    } else {
+        subMenu.style.display = "block";
+    }
 });
 
-// JavaScript for toggling the 'active' class on click
-document.addEventListener("DOMContentLoaded", function () {
-    const eachTypes = document.querySelectorAll(".eachType");
-
-    eachTypes.forEach(function (eachType) {
-        eachType.addEventListener("click", function () {
-            eachType.classList.toggle("active");
-        });
-    });
+// JavaScript to close the sub-menu when clicking anywhere on the page
+document.addEventListener("click", function (e) {
+    var subMenu = document.getElementById("work-submenu");
+    if (e.target.id !== "our-work" && subMenu.style.display === "block") {
+        subMenu.style.display = "none";
+    }
 });
